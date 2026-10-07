@@ -1,5 +1,7 @@
 # LOGIWISE 자율 모니터링 AI Agent
 
+> 📘 **참조 구현·가이드**: 이 저장소는 [logiwise-monitor-agent](https://github.com/rockdawayne-ship-it/logiwise-monitor-agent) 의 [Claude Code 가이드](https://github.com/rockdawayne-ship-it/logiwise-monitor-agent/blob/main/docs/CLAUDE_CODE_GUIDE.md) Step 0~6 프롬프트만으로 다시 만든 재현본이다. 재현 결과 보고는 [REPRO_REPORT.md](https://github.com/rockdawayne-ship-it/logiwise-monitor-agent/blob/main/docs/REPRO_REPORT.md).
+
 물류 성과관리 PRD(`docs/PRD.md`) 위에 **자율 모니터링 에이전트**를 얹은 교육용 로컬 프로젝트다.
 
 - **규칙(rules.py)** 이 주의·위험 센터를 찾고,
