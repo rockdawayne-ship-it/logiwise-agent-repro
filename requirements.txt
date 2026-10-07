@@ -1,0 +1,5 @@
+claude-agent-sdk
+streamlit
+pandas
+plotly
+pydantic

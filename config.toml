@@ -1,0 +1,29 @@
+# LOGIWISE 설정 파일
+# 환경변수 LOGIWISE_DB_PATH 가 있으면 [database].path 보다 우선한다.
+
+[database]
+# 프로젝트 루트 기준 상대 경로
+path = "data/logiwise.db"
+
+[agent]
+model = "claude-sonnet-5-5"
+effort = "medium"
+max_turns = 12
+timeout_seconds = 180
+
+[monitor]
+interval_seconds = 300        # 스케줄러 주기(초). 최소 30초
+max_centers_per_cycle = 2     # 한 사이클에 에이전트가 진단하는 센터 수
+use_agent = true              # false 면 규칙 기반 대체 경로만 사용
+
+[rules]
+# --- PRD 출처 ---
+on_time_target = 97.0         # PRD 4.1.1 평균 정시출고율 기준(%)
+unreceived_bottleneck = 3     # PRD 4.2.3 미입고수량 > 3 → 입고 단계 병목
+shortage_bottleneck = 5       # PRD 4.2.3 미납수량 > 5 → 출고 단계 병목
+heatmap_yellow_min = 1        # PRD 4.1.3 이상건수 1~3건 = 노랑
+heatmap_red_min = 4           # PRD 4.1.3 이상건수 4건+ = 빨강
+# --- 보완(PRD에 없어 제안한 값) ---
+danger_on_time = 95.0         # 보완: 정시출고율 < 95% → 위험
+danger_anomaly_count = 4      # 보완: 미처리 상태이상 ≥ 4건 → 위험
+event_delay_hours = 24        # 보완: 기한 초과 24h 이상 → 빨강, 미만 → 노랑
